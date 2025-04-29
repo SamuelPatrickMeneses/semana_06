@@ -30,8 +30,9 @@ export default function ScreenWrapper({ title, children }: ScreenWrapperProps) {
           },
         }}
       />
-
-      {children}
+      <View style={styles.containerIner}>
+        {children}
+      </View >
     </View>
   );
 }
@@ -40,5 +41,10 @@ const styles = StyleSheet.create({
   container: {
     padding: 16,
     gap: 8,
+    backgroundColor:'darkorange'
   },
+  containerIner:{
+    borderRadius:15,
+    backgroundColor:'white'
+  }
 });
