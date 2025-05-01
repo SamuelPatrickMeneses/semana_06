@@ -22,12 +22,13 @@ export default function ScreenWrapper({ title, children }: ScreenWrapperProps) {
           title,
           headerRight: () => (
             <TouchableOpacity>
-              <MaterialCommunityIcons name="menu" size={24} color="black" />
+              <MaterialCommunityIcons name="filter-variant" size={24} color="black" />
             </TouchableOpacity>
           ),
           contentStyle: {
             backgroundColor: "white",
           },
+          headerShadowVisible: false,
         }}
       />
       <View style={styles.containerIner}>
@@ -41,7 +42,6 @@ const styles = StyleSheet.create({
   container: {
     padding: 16,
     gap: 8,
-    backgroundColor:'darkorange'
   },
   containerIner:{
     borderRadius:15,

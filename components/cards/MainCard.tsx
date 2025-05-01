@@ -23,29 +23,31 @@ export default function MainCard({
   return (
     <Card>
       <View style={styles.container}>
-        <Text>{title}</Text>
-        <Text>{participating}/10 Participating</Text>
+        <View style={styles.uperContainer}>
+            <View >
+                <Text style={{ fontSize: 16 , fontWeight: "600", textAlign: 'center'}}>{title}</Text >
+                <Text  style={{ textAlign: 'center', color: 'dimgrey' }}>{participating}/10 Participating</Text >
+            </View >
+            <Image source={{ uri: imgUrl }} width={100} height={100} />
 
-        <Image source={{ uri: imgUrl }} width={100} height={100} />
+            <View style={styles.statsContainer}>
+              <View style={styles.icon}>
+                <MaterialCommunityIcons name="sword" size={24} color="black" />
+              </View>
 
-        <View style={styles.statsContainer}>
-          <View style={styles.icon}>
-            <MaterialCommunityIcons name="sword" size={24} color="black" />
-          </View>
+              <View style={styles.statsRight}>
+                <Text style={{fontWeight:"500", fontSize: 16}}>{name}</Text >
 
-          <View style={styles.statsRight}>
-            <Text>{name}</Text>
+                <View style={styles.barContainer}>
+                  <View style={{ ...styles.bar, width: "80%" }} />
+                </View>
 
-            <View style={styles.barContainer}>
-              <View style={{ ...styles.bar, width: "80%" }} />
+                <Text style={{color: 'dimgrey'}}>{hp} / 1500 HP</Text >
+              </View>
             </View>
-
-            <Text>{hp} / 1500 HP</Text>
-          </View>
         </View>
-
         <View style={styles.footer}>
-          <Text>{damageDone} Damage Done</Text>
+          <Text style={styles.footerText}>{damageDone} Damage Done</Text >
         </View>
       </View>
     </Card>
@@ -54,6 +56,10 @@ export default function MainCard({
 
 const styles = StyleSheet.create({
   container: {
+    alignItems: "stretch",
+    gap: 16,
+  },
+  uperContainer: {
     alignItems: "center",
     gap: 16,
   },
@@ -84,5 +90,13 @@ const styles = StyleSheet.create({
   },
   footer: {
     backgroundColor: "rgb(255 166 36)",
+    padding: 4,
+    borderBottomEndRadius: 10,
+    borderBottomStartRadius: 10,
+    
   },
+  footerText: {
+    color: "white",
+    textAlign: "center"
+  }
 });
